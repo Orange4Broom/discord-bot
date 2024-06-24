@@ -15,4 +15,4 @@ jobs:
 
       - name: Deploy to Replit
         run: |
-          curl -X POST https://replit.com/api/v0/your-repl-id/git-pull -H "Authorization: Bearer ${{ secrets.REPLIT_API_KEY }}"
+          curl -X POST https://replit.com/api/v0/03f8e9c0-8b86-46e3-95ea-9679ead6e935/git-pull -H "Authorization: Bearer ${{ secrets.REPLIT_API_KEY }}"

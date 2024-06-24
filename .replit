@@ -1,5 +1,6 @@
+run = "npx concurrently \"node server.js\" \"ts-node src/index.ts\""
 entrypoint = "src/index.ts"
-modules = ["nodejs-20:v8-20230920-bd784b9"]
+modules = ["nodejs-18:v8-20230920-bd784b9"]
 hidden = [".config", "package-lock.json"]
 
 [gitHubImport]
@@ -12,6 +13,10 @@ channel = "stable-23_05"
 language = "nodejs"
 
 [deployment]
-run = ["node", "server.js", "&&", "ts-node", "src/index.ts"]
+run = ["npx", "concurrently", "\"node server.js\"", "\"ts-node src/index.ts\""]
 deploymentTarget = "cloudrun"
 ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
